@@ -5,8 +5,8 @@ import matplotlib as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 N = 1000
-M = np.random.random((N, 2))*6-3
-P = np.cos(2*X[:,0]) + np.cos(3*X[:,1])
+X = np.random.random((N, 2))*6-3
+Y = np.cos(2*X[:,0]) + np.cos(3*X[:,1])
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
@@ -26,7 +26,7 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.scatter(X[:,0], X[:,1], Y)
 
-line = np.linspace(-3, 3, 50)
+line = np.linspace(-3, 3, 50) #initial space
 xx, yy = np.meshgrid(line, line)
 Xgrid = np.vstack((xx.flatten(), yy.flatten())).T
 Yhat = model.predict(Xgrid).flatten()
@@ -37,7 +37,7 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.scatter(X[:,0], X[:,1], Y)
 
-line = np.linspace(-5, 5, 50)
+line = np.linspace(-5, 5, 50) #increase our workspace
 xx, yy = np.meshgrid(line, line)
 Xgrid = np.vstack((xx.flatten(), yy.flatten())).T
 Yhat = model.predict(Xgrid).flatten()
