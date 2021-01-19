@@ -12,6 +12,15 @@ def convolute(matrix):
             output[i][j] = matrix[i][j] * 1 + matrix[i+1][j+1] * 2 
     return output
 
+def inputMatrix():
+    rows = int(input())
+    cols = int(input())
+    matrix = []
+    for i in range(rows):
+        row = list(input().strip().split())
+        matrix.append(row)
+    return matrix
+
 testMatrix = [
     [0, 10, 10, 0],
     [20, 30, 30, 20],
